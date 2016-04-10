@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Loren Mork">
+    <title> Bubble Shooter </title>
+    <link href="_css/main.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <script src="_js/modernizr.js"></script>
+    <script>
+    Modernizr.load([{
+
+					load: "//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js",
+					complete: function () {
+						if(!window.jQuery){
+							Modernizr.load("_js/jquery-1.11.2.min.js");
+						}
+					},
+        },
+          {
+            load:"_js/game.js",
+            complete:function(){
+              var game = new BubbleShoot.Game;
+              game.init();
+
+
+            }
+				}]);
+    </script>
+  </head>
+  <body>
+    <div id="page">
+      <div id="top_bar">top bar</div>
+      <div id="game">game </div>
+      <div id="footer_bar">footer </div>
+      <div id="start_game" class="dialog stop_drag">
+        <div id="start_game_message" class="default_cursor">
+
+          <h2> Start a new <br>Bubble Shooter<br> game</h2>
+        </div>
+        <div class="but_start_game button">
+          NEW GAME
+      </div>
+    </div>
+  </body>
+</html>
